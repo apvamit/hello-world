@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: newimg 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: newimg 
+    spec:
+      containers:
+        - name: newimg 
+          image: mycontainerregistryapv.azurecr.io/newimg
+          ports:
+          - containerPort: 9090
